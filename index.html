@@ -27,15 +27,17 @@
         .dark .tab-link.active { color: #60a5fa; border-bottom: 2px solid #60a5fa; }
         [onclick] { cursor: pointer; }
         .interest-btn.active { background-color: #2563eb; border-color: #2563eb; color: #fff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 <script type="importmap">
 {
   "imports": {
-    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react/": "https://esm.sh/react@^19.2.4/",
     "vite": "https://esm.sh/vite@^7.3.1",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0"
   }
 }
 </script>
@@ -79,18 +81,18 @@
                         
                         <div class="space-y-4 text-sm text-slate-600 dark:text-slate-400 w-full">
                             <div class="flex items-center gap-3">
-                                <span class="text-lg">📍</span>
+                                <span class="text-lg">🌍</span>
                                 <span>Dhaka, Bangladesh</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="text-lg">🎓</span>
-                                <span>Military Institute of Science and Technology</span>
+                                <span class="leading-tight">Military Institute of Science and Technology, Dhaka, BD</span>
                             </div>
                         </div>
                     </div>
                 </aside>
 
-                <!-- About Content -->
+                <!-- About Content Area -->
                 <div class="flex-grow max-w-3xl">
                     <div class="mb-16">
                         <div class="flex items-center mb-8">
@@ -108,14 +110,46 @@
                         </div>
 
                         <!-- Research Interests -->
-                        <div class="mt-12">
+                        <div class="mt-12 mb-16">
                             <div class="flex items-center mb-8">
                                 <div class="w-2 h-10 bg-red-600 mr-4"></div>
                                 <h2 class="text-3xl font-black uppercase tracking-tight">Research Interests</h2>
                             </div>
                             <div id="interests-container" class="flex flex-wrap gap-2 mb-6"></div>
-                            <div class="p-6 bg-slate-50/50 dark:bg-slate-900/30 rounded-2xl border border-slate-100 dark:border-slate-800 italic text-lg" id="interest-description">
+                            <div class="p-6 bg-slate-50/50 dark:bg-slate-900/30 rounded-2xl border border-slate-100 dark:border-slate-800 italic text-lg transition-all duration-300 min-h-[100px]" id="interest-description">
                                 Click an interest above to see details.
+                            </div>
+                        </div>
+
+                        <!-- Technical Skills -->
+                        <div class="mt-12">
+                            <div class="flex items-center mb-8">
+                                <div class="w-2 h-10 bg-red-600 mr-4"></div>
+                                <h2 class="text-3xl font-black uppercase tracking-tight">Technical Skills</h2>
+                            </div>
+                            <div class="space-y-10">
+                                <div>
+                                    <h4 class="text-[11px] font-bold text-slate-500 uppercase tracking-widest mb-5">NUMERICAL MODELING AND ANALYSIS</h4>
+                                    <div class="flex flex-wrap gap-3">
+                                        <span class="px-5 py-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-full text-sm font-medium text-slate-700 dark:text-slate-300 shadow-sm transition-all hover:border-blue-400 hover:text-blue-600">STAR CCM+</span>
+                                        <span class="px-5 py-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-full text-sm font-medium text-slate-700 dark:text-slate-300 shadow-sm transition-all hover:border-blue-400 hover:text-blue-600">ANSYS Fluent</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-[11px] font-bold text-slate-500 uppercase tracking-widest mb-5">PROGRAMMING LANGUAGES</h4>
+                                    <div class="flex flex-wrap gap-3">
+                                        <span class="px-5 py-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-full text-sm font-medium text-slate-700 dark:text-slate-300 shadow-sm transition-all hover:border-blue-400 hover:text-blue-600">MATLAB</span>
+                                        <span class="px-5 py-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-full text-sm font-medium text-slate-700 dark:text-slate-300 shadow-sm transition-all hover:border-blue-400 hover:text-blue-600">C++</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-[11px] font-bold text-slate-500 uppercase tracking-widest mb-5">DRAFTING AND 3D DESIGN</h4>
+                                    <div class="flex flex-wrap gap-3">
+                                        <span class="px-5 py-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-full text-sm font-medium text-slate-700 dark:text-slate-300 shadow-sm transition-all hover:border-blue-400 hover:text-blue-600">AutoCAD</span>
+                                        <span class="px-5 py-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-full text-sm font-medium text-slate-700 dark:text-slate-300 shadow-sm transition-all hover:border-blue-400 hover:text-blue-600">Rhinoceros 3D</span>
+                                        <span class="px-5 py-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-full text-sm font-medium text-slate-700 dark:text-slate-300 shadow-sm transition-all hover:border-blue-400 hover:text-blue-600">Solidworks</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -125,27 +159,88 @@
 
         <!-- Research Tab -->
         <div id="research-tab" class="tab-content">
-            <h2 class="text-4xl font-bold mb-12">Research Projects</h2>
-            <div class="space-y-24">
+            <!-- Research Overview Section -->
+            <div class="mb-20">
+                <div class="flex items-center mb-8">
+                    <div class="w-2 h-10 bg-red-600 mr-4"></div>
+                    <h2 class="text-4xl font-black uppercase tracking-tight">Research Overview</h2>
+                </div>
+                <div class="p-8 bg-slate-50/50 dark:bg-slate-900/30 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm leading-relaxed text-xl text-slate-700 dark:text-slate-300 font-medium">
+                    I am broadly interested in fluid dynamic problems at the interface of material, biological, thermal and environmental engineering. I utilize advanced numerical techniques to evaluate dynamic systems and to uncover fundamental fluid-structure interactions. My research aims to solve critical energy and environmental issues in our society.
+                </div>
+            </div>
+            
+            <div class="space-y-32">
+                <!-- Project 01 -->
                 <div class="md:pl-14 relative">
-                    <div class="absolute -left-4 top-0 text-6xl font-black text-slate-100 dark:text-slate-900 select-none">01</div>
-                    <h3 class="text-2xl font-bold mb-4 relative z-10">Numerical Modeling and Validation</h3>
-                    <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-3xl">Focusing on the rigorous validation of numerical models against experimental benchmarks. Assessing the accuracy of RANS and LES simulations.</p>
-                    <div class="max-w-2xl rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
-                        <img src="https://images.unsplash.com/photo-1534447677768-base436bb09401?auto=format&fit=crop&w=800&q=80" alt="CFD Simulation" class="w-full">
+                    <div class="absolute -left-4 top-0 text-7xl font-black text-slate-100 dark:text-slate-900 select-none">01</div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-4">Numerical Modeling and Validation</h3>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 max-w-3xl leading-relaxed">Focusing on the rigorous validation of numerical models against experimental benchmarks. Assessing the accuracy of RANS and LES simulations in predicting aerodynamic coefficients and flow topologies for complex marine geometries.</p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded uppercase">ANSYS Fluent</span>
+                            <span class="text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded uppercase">RANS/LES</span>
+                            <span class="text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded uppercase">Validation</span>
+                        </div>
+                        <div class="max-w-2xl rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1534447677768-base436bb09401?auto=format&fit=crop&w=800&q=80" alt="CFD Simulation" class="w-full">
+                        </div>
                     </div>
                 </div>
+
+                <!-- Project 02 -->
                 <div class="md:pl-14 relative">
-                    <div class="absolute -left-4 top-0 text-6xl font-black text-slate-100 dark:text-slate-900 select-none">02</div>
-                    <h3 class="text-2xl font-bold mb-4 relative z-10">Fluid-Structure Interactions (FSI)</h3>
-                    <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-3xl">Investigating the dynamic coupling between fluid flow and flexible or moving structures.</p>
+                    <div class="absolute -left-4 top-0 text-7xl font-black text-slate-100 dark:text-slate-900 select-none">02</div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-4">Fluid-Structure Interactions (FSI)</h3>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 max-w-3xl leading-relaxed">Investigating the dynamic coupling between fluid flow and flexible or moving structures. My research explores how oscillatory flows impact structural integrity and performance, particularly for marine propulsion systems.</p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded uppercase">FSI</span>
+                            <span class="text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded uppercase">Steady Flow</span>
+                            <span class="text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded uppercase">Vortex-Induced Vibrations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 03 -->
+                <div class="md:pl-14 relative">
+                    <div class="absolute -left-4 top-0 text-7xl font-black text-slate-100 dark:text-slate-900 select-none">03</div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-4">Offshore Renewable Energy (Wind, Wave)</h3>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 max-w-3xl leading-relaxed">Analysis of harvesting energy from marine environments. This research investigates the wake evolution and hydrodynamic performance of tidal turbines and wind propulsion systems.</p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded uppercase">Tidal Turbines</span>
+                            <span class="text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded uppercase">Renewable Energy</span>
+                            <span class="text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded uppercase">Wake Dynamics</span>
+                        </div>
+                        <div class="max-w-2xl rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1466611653911-954ffea112d8?auto=format&fit=crop&w=800&q=80" alt="Offshore Energy" class="w-full">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 04 -->
+                <div class="md:pl-14 relative">
+                    <div class="absolute -left-4 top-0 text-7xl font-black text-slate-100 dark:text-slate-900 select-none">04</div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-4">Aeroelasticity</h3>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 max-w-3xl leading-relaxed">Dedicated study of the mutual interaction of aerodynamic, elastic, and inertial forces. Focus on aeroelastic stability of wing systems and hard sails used in wind-assisted ship propulsion.</p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded uppercase">Stability Analysis</span>
+                            <span class="text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded uppercase">SST k-omega</span>
+                            <span class="text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded uppercase">Lift/Drag Analysis</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Publications Tab -->
         <div id="publications-tab" class="tab-content">
-            <h2 class="text-4xl font-bold mb-4">Publications</h2>
+            <div class="flex items-center mb-12">
+                <div class="w-2 h-10 bg-red-600 mr-4"></div>
+                <h2 class="text-4xl font-black uppercase tracking-tight">Publications</h2>
+            </div>
             <p class="text-slate-500 mb-10">Selected peer-reviewed research papers.</p>
             
             <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 hover:shadow-xl transition-shadow">
@@ -175,10 +270,10 @@
                             <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Citing Styles</div>
                             <div class="grid grid-cols-1 gap-3">
                                 <div class="p-3 bg-slate-50 dark:bg-black/30 border border-slate-100 dark:border-slate-800 rounded-lg text-xs">
-                                    <span class="font-bold">APA:</span> Chowdhury, J. I., et al. (2023). Seakeeping analysis... Ocean Engineering.
+                                    <span class="font-bold">APA:</span> Chowdhury, J. I., et al. (2023). Seakeeping analysis of a tanker with hard sail-based wind propulsion system in various seaways, Ocean Engineering.
                                 </div>
                                 <div class="p-3 bg-slate-50 dark:bg-black/30 border border-slate-100 dark:border-slate-800 rounded-lg text-xs">
-                                    <span class="font-bold">IEEE:</span> [1] J. I. Chowdhury et al., "Seakeeping analysis...," Ocean Engineering, 2023.
+                                    <span class="font-bold">IEEE:</span> [1] J. I. Chowdhury et al., "Seakeeping analysis of a tanker with hard sail-based wind propulsion system in various seaways," Ocean Engineering, 2023.
                                 </div>
                             </div>
                         </div>
@@ -193,7 +288,10 @@
 
         <!-- Experience Tab -->
         <div id="experience-tab" class="tab-content">
-            <h2 class="text-4xl font-bold mb-12">Work Experience</h2>
+            <div class="flex items-center mb-12">
+                <div class="w-2 h-10 bg-red-600 mr-4"></div>
+                <h2 class="text-4xl font-black uppercase tracking-tight">Experience</h2>
+            </div>
             <div class="relative pl-10 border-l-2 border-slate-100 dark:border-slate-800">
                 <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600"></div>
                 <div class="flex justify-between items-start mb-2">
@@ -253,15 +351,20 @@
     </div>
 
     <script>
-        // Data
+        // Updated Research Interests Data
         const interests = [
-            { title: "CFD", desc: "High-fidelity Computational Fluid Dynamics (RANS, LES, DNS) to solve complex fluid flow problems." },
-            { title: "FSI", desc: "Dynamic coupling between fluid flows and deformable structures for marine systems." },
-            { title: "Hydrodynamics", desc: "Fundamental physics of water motion around solid bodies for aquatic engineering." },
-            { title: "Offshore Energy", desc: "Harvesting sustainable energy from marine environments (Wind, Wave, Tidal)." }
+            { title: "Environmental Fluid Dynamics", desc: "Studying complex flow processes in natural environments, focusing on transport and mixing phenomena in coastal and oceanic regions." },
+            { title: "Fluid-Structure Interactions", desc: "Investigating the dynamic coupling between fluid flow and flexible or moving structures for marine propulsion and offshore platforms." },
+            { title: "CFD", desc: "Utilizing high-fidelity numerical simulations (RANS, LES, DNS) to solve complex turbulent flow problems and optimize engineering designs." },
+            { title: "Marine Hydrodynamics", desc: "Focusing on the fundamental physics of water motion around ships, offshore structures, and renewable energy devices." },
+            { title: "Aerodynamics", desc: "Optimizing flow around complex geometries with a focus on lift/drag analysis for wind-assisted ship propulsion systems." },
+            { title: "Multiphase Flow", desc: "Modeling and simulating simultaneous flows of multiple phases (gas-liquid-solid) in industrial and environmental contexts." },
+            { title: "Turbulence", desc: "Developing and implementing robust turbulence models to capture chaotic flow structures and energy dissipation mechanisms." },
+            { title: "High Performance Computing", desc: "Leveraging parallel computing architectures to perform large-scale, computationally intensive fluid dynamic simulations." },
+            { title: "Experimental Fluid Dynamics", desc: "Utilizing advanced diagnostic techniques like PIV and LDA to validate numerical models through wind and water tunnel testing." }
         ];
 
-        const expertise = ["Hydrodynamic Analysis", "Mooring Analysis", "Offshore Towing", "Stationkeeping", "Hydrostatic Calculation", "Structural Analysis", "2D/3D Design"];
+        const expertise = ["Hydrodynamic Analysis", "Mooring Analysis", "Offshore Towing & Stationkeeping", "Hydrostatic Calculation", "Structural Analysis", "2D/3D Design"];
         const software = ["Bentley MOSES", "AutoCAD", "Rhinoceros 3D", "Optimoor", "Octopus Office", "Femap"];
 
         // UI Logic
@@ -270,7 +373,7 @@
             document.querySelectorAll('.tab-link').forEach(el => el.classList.remove('active'));
             document.getElementById(tabId + '-tab').classList.add('active');
             document.getElementById('tab-btn-' + tabId).classList.add('active');
-            window.scrollTo(0,0);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function toggleTheme() {
@@ -295,7 +398,7 @@
             const intCont = document.getElementById('interests-container');
             interests.forEach((item, idx) => {
                 const btn = document.createElement('button');
-                btn.className = "interest-btn px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 text-sm font-bold transition-all hover:border-blue-500 " + (idx === 0 ? 'active' : '');
+                btn.className = "interest-btn px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 text-xs font-bold transition-all hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 " + (idx === 0 ? 'active' : '');
                 btn.innerText = item.title;
                 btn.onclick = () => {
                     document.querySelectorAll('.interest-btn').forEach(b => b.classList.remove('active'));
@@ -309,7 +412,7 @@
             const expList = document.getElementById('expertise-list');
             expertise.forEach(item => {
                 const span = document.createElement('span');
-                span.className = "px-3 py-1.5 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-900/30 rounded-lg text-xs font-bold text-blue-700 dark:text-blue-300";
+                span.className = "px-3 py-1.5 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-900/30 rounded-lg text-[11px] font-bold text-blue-700 dark:text-blue-300";
                 span.innerText = item;
                 expList.appendChild(span);
             });
@@ -317,7 +420,7 @@
             const softList = document.getElementById('software-list');
             software.forEach(item => {
                 const span = document.createElement('span');
-                span.className = "px-3 py-1.5 bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-lg text-xs font-bold";
+                span.className = "px-3 py-1.5 bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-lg text-[11px] font-bold";
                 span.innerText = item;
                 softList.appendChild(span);
             });
@@ -330,30 +433,31 @@
             const text = input.value.trim();
             if(!text) return;
 
-            box.innerHTML += `<div class="bg-blue-600 text-white p-2 rounded-lg self-end ml-auto max-w-[80%]">${text}</div>`;
+            box.innerHTML += `<div class="bg-blue-600 text-white p-2 rounded-lg self-end ml-auto max-w-[80%] shadow-sm">${text}</div>`;
             input.value = '';
             box.scrollTop = box.scrollHeight;
 
             const loading = document.createElement('div');
-            loading.innerText = 'Thinking...';
+            loading.innerText = 'Analyzing...';
+            loading.className = 'text-slate-400 italic text-xs';
             box.appendChild(loading);
 
             try {
-                const apiKey = "process.env.API_KEY"; // Placeholder for API Key replacement
+                const apiKey = "process.env.API_KEY";
                 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        contents: [{ parts: [{ text: `Answer professionally for Jawadul Islam Chowdhury's portfolio: ${text}` }] }]
+                        contents: [{ parts: [{ text: `You are a professional research assistant for Jawadul Islam Chowdhury. Answer based on his interests: Environmental Fluid Dynamics, FSI, CFD, Marine Hydrodynamics, Aerodynamics, Multiphase Flow, Turbulence, HPC, and EFD. Question: ${text}` }] }]
                     })
                 });
                 const data = await response.json();
                 const reply = data.candidates[0].content.parts[0].text;
-                box.removeChild(loading);
-                box.innerHTML += `<div class="bg-slate-100 dark:bg-slate-800 p-2 rounded-lg max-w-[80%]">${reply}</div>`;
+                if(loading.parentNode) box.removeChild(loading);
+                box.innerHTML += `<div class="bg-slate-100 dark:bg-slate-800 p-2 rounded-lg max-w-[80%] border border-slate-200 dark:border-slate-700 shadow-sm">${reply}</div>`;
             } catch (e) {
-                box.removeChild(loading);
-                box.innerHTML += `<div class="text-red-500">Error connecting to assistant.</div>`;
+                if(loading.parentNode) box.removeChild(loading);
+                box.innerHTML += `<div class="text-red-500">Service temporarily unavailable.</div>`;
             }
             box.scrollTop = box.scrollHeight;
         }
