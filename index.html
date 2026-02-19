@@ -83,7 +83,7 @@
                     <div class="flex flex-col items-center md:items-start">
                         <!-- PROFILE PHOTO -->
                         <div class="w-52 h-64 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-10 overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl group">
-                            <img src="Jawad-profile.png?fit=crop&w=800&q=80" alt="Jawadul Islam Chowdhury Profile Photo" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&q=80" alt="Jawadul Islam Chowdhury Profile Photo" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
                         </div>
                         <h1 class="text-2xl font-bold mb-1">Jawadul Islam Chowdhury</h1>
                         <p class="text-xs font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-8">ENGINEER | RESEARCHER</p>
@@ -213,7 +213,7 @@
                     <div class="absolute -left-4 top-0 text-7xl font-black text-slate-100 dark:text-slate-900 select-none">01</div>
                     <div class="relative z-10">
                         <h3 class="text-2xl font-bold mb-4">Numerical Modeling and Validation</h3>
-                        <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 max-w-3xl leading-relaxed">Focusinng on the rigorous validation of numerical models against experimental benchmarks. Assessing the accuracy of RANS and LES simulations in predicting fluid-structure interactions and flow topologies for complex systems.Performs advanced mesh generation and turbulence modeling to ensure solution convergence and high-quality results. </p>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 max-w-3xl leading-relaxed">Focusing on the rigorous validation of numerical models against experimental benchmarks. Assessing the accuracy of RANS and LES simulations in predicting aerodynamic coefficients and flow topologies for complex marine geometries.</p>
                         <div class="flex flex-wrap gap-2 mb-8">
                             <span class="text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded uppercase">ANSYS Fluent</span>
                             <span class="text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded uppercase">RANS/LES</span>
@@ -221,7 +221,7 @@
                         </div>
                         <!-- PROJECT PHOTO 01 -->
                         <div class="max-w-2xl rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm">
-                            <img src="Research_image-1?auto=format&fit=crop&w=800&q=80" alt="Numerical Modeling Research" class="w-full h-auto">
+                            <img src="https://images.unsplash.com/photo-1534447677768-base436bb09401?auto=format&fit=crop&w=800&q=80" alt="Numerical Modeling Research" class="w-full h-auto">
                         </div>
                     </div>
                 </div>
@@ -369,10 +369,29 @@
 
     <!-- Footer -->
     <footer class="border-t border-slate-100 dark:border-slate-800 py-12 mt-20 text-center text-slate-400 text-sm">
-        <p>© <span id="year"></span> Jawadul Islam Chowdhury. All Rights Reserved.</p>
+        <p>© <span id="year"></span> Jawadul Islam Chowdhury. Copyright Reserved.</p>
     </footer>
 
-    
+    <!-- Chat Bot -->
+    <button onclick="toggleChat()" class="fixed bottom-6 right-6 z-50 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform">
+        <span class="text-xl">🤖</span>
+    </button>
+    <div id="chat-window" class="hidden fixed bottom-24 right-6 w-80 md:w-96 h-[500px] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl z-50 flex flex-col border border-slate-200 dark:border-slate-800 animate-in slide-in-from-bottom-5">
+        <div class="p-4 bg-blue-900 text-white rounded-t-2xl flex justify-between items-center">
+            <span class="font-bold text-sm">Research Assistant Bot</span>
+            <button onclick="toggleChat()">✕</button>
+        </div>
+        <div id="chat-messages" class="flex-grow p-4 overflow-y-auto space-y-3 text-xs md:text-sm">
+            <div class="bg-slate-100 dark:bg-slate-800 p-2 rounded-lg">Hello! I am Jawad's Research Assistant bot. Ask me anything about his work!</div>
+        </div>
+        <div class="p-4 border-t flex gap-2">
+            <input id="chat-input" type="text" placeholder="Type a message..." class="flex-grow border rounded-full px-4 py-2 text-sm focus:outline-none dark:bg-slate-800 dark:text-white">
+            <button onclick="sendChat()" class="bg-blue-600 text-white px-4 rounded-full">Send</button>
+        </div>
+    </div>
+
+    <script type="module">
+        import { GoogleGenAI } from "@google/genai";
 
         // Global UI state/methods exposed to window for inline onclick handlers
         window.showTab = (tabId) => {
@@ -491,7 +510,3 @@
     </script>
 </body>
 </html>
-
-
-
-
