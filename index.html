@@ -221,7 +221,7 @@
                         </div>
                         <!-- PROJECT PHOTO 01 -->
                         <div class="max-w-2xl rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1534447677768-base436bb09401?auto=format&fit=crop&w=800&q=80" alt="Numerical Modeling Research" class="w-full h-auto">
+                            <img src="Research_image-1?auto=format&fit=crop&w=800&q=80" alt="Numerical Modeling Research" class="w-full h-auto">
                         </div>
                     </div>
                 </div>
@@ -372,26 +372,7 @@
         <p>© <span id="year"></span> Jawadul Islam Chowdhury. All Rights Reserved.</p>
     </footer>
 
-    <!-- Chat Bot -->
-    <button onclick="toggleChat()" class="fixed bottom-6 right-6 z-50 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform">
-        <span class="text-xl">🤖</span>
-    </button>
-    <div id="chat-window" class="hidden fixed bottom-24 right-6 w-80 md:w-96 h-[500px] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl z-50 flex flex-col border border-slate-200 dark:border-slate-800 animate-in slide-in-from-bottom-5">
-        <div class="p-4 bg-blue-900 text-white rounded-t-2xl flex justify-between items-center">
-            <span class="font-bold text-sm">Research Assistant Bot</span>
-            <button onclick="toggleChat()">✕</button>
-        </div>
-        <div id="chat-messages" class="flex-grow p-4 overflow-y-auto space-y-3 text-xs md:text-sm">
-            <div class="bg-slate-100 dark:bg-slate-800 p-2 rounded-lg">Hello! I am Jawad's Research Assistant bot. Ask me anything about his work!</div>
-        </div>
-        <div class="p-4 border-t flex gap-2">
-            <input id="chat-input" type="text" placeholder="Type a message..." class="flex-grow border rounded-full px-4 py-2 text-sm focus:outline-none dark:bg-slate-800 dark:text-white">
-            <button onclick="sendChat()" class="bg-blue-600 text-white px-4 rounded-full">Send</button>
-        </div>
-    </div>
-
-    <script type="module">
-        import { GoogleGenAI } from "@google/genai";
+    
 
         // Global UI state/methods exposed to window for inline onclick handlers
         window.showTab = (tabId) => {
@@ -510,6 +491,7 @@
     </script>
 </body>
 </html>
+
 
 
 
